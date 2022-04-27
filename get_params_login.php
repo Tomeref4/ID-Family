@@ -17,7 +17,7 @@
             <?php
 
                 echo '<style>';
-                require_once("css/styleCommander.css");
+                require_once("css/style.css");
                 echo '</style>';
 
                 $FullName = $_GET["fullName"];
@@ -42,25 +42,25 @@
 
                 echo '<div id="Php">';
 
-                echo "<h2> :שם מלא " . $FullName . "</h2>";
+                echo "<span> :שם מלא " . $FullName . "</span>";
 
-                echo "<h2>:סיסמא שנבחרה " . $Password . "</h2>";
+                echo "<span>:סיסמא שנבחרה " . $Password . "</span>";
 
-                echo "<h2>:תאריך לידה " . $Birth . "</h2>";
+                echo "<span>:תאריך לידה " . $Birth . "</span>";
 
-                echo "<h2>:מספר טלפון " . $Phone . "</h2>";
+                echo "<span>:מספר טלפון " . $Phone . "</span>";
 
-                echo "<h2>:מין " . $Gender . "</h2>";
+                echo "<span>:מין " . $Gender . "</span>";
 
-                echo "<h2>:אנשי קשר למקרה חירום " . $Contacts . "</h2>";
+                echo "<span>:אנשי קשר למקרה חירום " . $Contacts . "</span>";
 
-                echo "<h2>:כתובת " . $Address . "</h2>";
+                echo "<span>:כתובת " . $Address . "</span>";
                 
-                //echo "<h2>:פטורים " . $Release . "</h2>";
+                //echo "<span>:פטורים " . $Release . "</span>";
 
-                //echo "<h2>:תנאי שירות " . $Terms . "</h2>";
+                //echo "<span>:תנאי שירות " . $Terms . "</span>";
 
-                //echo "<h2>:אישורי עבודה " . $WorkPermits . "</h2>";
+                //echo "<span>:אישורי עבודה " . $WorkPermits . "</span>";
 
                 echo '</div>';
                 
@@ -68,7 +68,7 @@
                 setTimeout(function(){
                     
                   location.href = "index.html";
-              },3000) ;
+              },1000) ;
               </script>'
             ?>      
         </section>
