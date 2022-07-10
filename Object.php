@@ -12,17 +12,17 @@
     <div id="Wrapper">
         <header id="headerHolder">
             <div id="profileHolder">
-                <a href="#" id="profile2"></a>
+                <a href="#" id="profile"></a>
                 <h2 class="soldierName">אריאל טובים</h2>
             </div>
             <div id="logoHolder">
-                <a href="index.html" id="logo"></a>
+                <a href="index.php" id="logo"></a>
             </div>
             <div id="menuHolder">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                 <div id="mySidenav" class="sidenav">
                     <div id="profileHolder">
-                        <a href="#" id="profile2"></a>
+                        <a href="#" id="profile"></a>
                         <h2 class="soldierName">אריאל טובים</h2>
                     </div>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

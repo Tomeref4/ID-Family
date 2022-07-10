@@ -67,7 +67,7 @@
                 echo '<script> 
                 setTimeout(function(){
                     
-                  location.href = "index.html";
+                  location.href = "index.php";
               },1000) ;
               </script>'
             ?>      

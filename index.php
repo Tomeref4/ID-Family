@@ -17,7 +17,7 @@
                 <h2 class="soldierName">אריאל טובים</h2>
             </div>
             <div id="logoHolder">
-                <a href="index.html" id="logo"></a>
+                <a href="index.php" id="logo"></a>
             </div>
             <div id="menuHolder">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -41,7 +41,7 @@
             <div id="beforLisrHolder">
                 <div id="editingCotainer">
                     <div class="editingTubCotainer">
-                        <a href="AddSolider.html" class="activeItem">הוספה</a>
+                        <a href="AddSolider.php" class="activeItem">הוספה</a>
                         <a href="#" class="nonActiveItem">עריכה</a>
                         <a href="#" class="nonActiveItem">מחיקה</a>
                     </div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="aCounaiter">
                         <span class="dot">i</span>
-                        <a href="Object.html" class="aSoldaier">
+                        <a href="Object.php" class="aSoldaier">
                             <img src="images/michaelProfile1.png" alt="" class="objImage">
                         </a>
                     </div>

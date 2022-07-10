@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
     <title>ID Family</title>
 </head>
-
 <body>
     <div id="Wrapper">
         <header id="headerHolder">
@@ -16,7 +15,7 @@
                 <h2 class="soldierName">מיכאל שוורץ</h2>
             </div>
             <div id="logoHolder">
-                <a href="Soldier.html" id="logo"></a>
+                <a href="Soldier.php" id="logo"></a>
             </div>
             <div id="menuHolder">
                 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
