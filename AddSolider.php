@@ -115,7 +115,7 @@
                 </div>
                 <br>
                 <br>
-                <input class="submit-button" type="submit" value="שליחה" class="btn btn-secondary btn-sm">
+                <input id="Submit1" class="submit-button" type="submit" value="שליחה" class="btn btn-secondary btn-sm">
             </form>
         </div>
         <script src="js/commanderScripts.js"></script>
