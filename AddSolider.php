@@ -1,27 +1,48 @@
+<?php
+
+    include 'db.php';
+
+    include 'config.php';
+
+
+
+    session_start();
+
+
+
+    if(!isset($_SESSION["id"])) {
+
+        header('Location: ' . URL . 'index.php');
+
+    }
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <title>ID Family</title>
     </head>
-    <body >
+    <body class="page2">
+        <div id="navDesktop"></div>
         <div id="Wrapper" >
             <header id="headerHolder">
-                <div id="profileHolder">
-                    <a href="#" id="profile2"></a>
+                <div class="profileHolder">
+                    <a href="commander.php" class="profile2"></a>
                     <h2 class="soldierName">אריאל טובים</h2>
                 </div>
                 <div id="logoHolder">
-                    <a href="index.php" id="logo"></a>
+                    <a href="commander.php" id="logo"></a>
                 </div>
                 <div id="menuHolder">
-                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    <span onclick="openNav()">&#9776;</span>
                     <div id="mySidenav" class="sidenav">
-                        <div id="profileHolder" style="margin-top: 10px;">
-                            <a href="#" id="profile2"></a>
+                        <div class="profileHolder" style="margin-top: 10px;">
+                            <a href="#" class="profile2"></a>
                             <h2 class="soldierName">אריאל טובים</h2>
                         </div>
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -32,16 +53,16 @@
                         <a href="#">אירועים</a>
                         <div class="buffer"></div>
                         <a href="#">הגדרות</a>
-                        <a href="#">התנתקות</a>
+                        <a href="index.php">התנתקות</a>
                     </div>
+                </div>
             </header>
             <form action="get_params_login.php" method="GET" class="form-horizontal" id="AddSoldier">
-                <span>הוספת חייל חדש</span>
+                <h1>הוספת חייל חדש</h1>
                 <div class="form-group">
                 <label  >:שם מלא
                     <div>
-                    <input type="text" name="fullName" placeholder="שם מלא" required
-                    pattern="[א-ת]+ [א-ת]+$">
+                    <input type="text" name="fullName" placeholder="שם מלא">
                     </div>
                 </label>
                 </div>
@@ -49,7 +70,7 @@
                 <div class="form-group">
                 <label >:סיסמא ראשונית
                     <div>
-                    <input type="password" name="password" placeholder="סיסמא" required>
+                    <input type="password" name="password" placeholder="סיסמא" >
                     </div>
                 </label>
                 </div>
@@ -57,7 +78,7 @@
                 <div class="form-group">
                 <label >:תאריך לידה
                     <div>
-                    <input type="date" name="dateOfBirth" required>
+                    <input type="date" name="dateOfBirth" >
                     </div>
                 </label>
                 </div> 
@@ -65,22 +86,22 @@
                 <div class="form-group">
                         <label >:מספר טלפון
                             <div>
-                            <input type="tel" name="phone" placeholder="מספר טלפון" pattern="[0-9]{9,10}" required>
+                                <input type="text" name="phone" placeholder="מספר טלפון">
                             </div>
                         </label>  
                 </div>        
                 <br>
                 <div class="form-group">
-                    <span>:מין</span>
+                    <span>:חייל\מפקד</span>
                     <br>
-                    <label>זכר<input type="radio" name="gender" value="male"></label>
-                    <label>נקבה<input type="radio" name="gender" value="female"></label>
+                    <label>חייל<input type="radio" name="soldierType" value="2"></label>
+                    <label>מפקד<input type="radio" name="soldierType" value="1"></label>
                 </div>
                 <br>  
                 <div class="form-group">
-                <label >:אנשי קשר למקרה חירום
+                <label >:מספר אישי
                     <div>
-                    <textarea name="contacts" cols="30" rows="4" placeholder="שם ומספר טלפון"></textarea>
+                        <input type="text" name="id" placeholder="מספר אישי">
                     </div>
                 </label>  
                 </div>
@@ -88,37 +109,13 @@
                 <div class="form-group">
                     <label >:מקום מגורים
                         <div>
-                        <textarea name="address" cols="30" rows="2"  placeholder="כתובת"></textarea>
+                            <input type="text" name="address" cols="30" rows="2"  placeholder="כתובת">
                         </div>
                     </label>
                 </div>
                 <br>
-                <div class="form-group">
-                <label >:אישורי עבודה
-                    <div>
-                    <input type="file" name="workPermits">
-                    </div>
-                </label>
-                </div>
                 <br>
-                <div class="form-group">
-                    <label >:תנאי שירות
-                        <div>
-                        <input type="file" name="termsOfService">
-                        </div>
-                    </label>  
-                </div> 
-                <br>
-                <div class="form-group">
-                    <label >:פטורים
-                        <div>
-                        <input type="file" name="release"> 
-                        </div>
-                    </label> 
-                </div>
-                <br>
-                <br>
-                <input id="submit-button" type="submit" value="שליחה" class="btn btn-secondary btn-sm">
+                <input class="submit-button" type="submit" value="שליחה" class="btn btn-secondary btn-sm">
             </form>
         </div>
         <script src="js/commanderScripts.js"></script>

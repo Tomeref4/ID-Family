@@ -1,122 +1,139 @@
+<?php
+
+    include 'db.php';
+
+    include 'config.php';
+
+    if(!isset($_SESSION["id"])) {
+        session_start();
+        session_destroy();
+
+    }
+
+    if(!empty($_POST["loginID"])) {
+
+
+        $query  = "SELECT * FROM tbl_220_users WHERE id='" 
+
+            . $_POST["loginID"] 
+
+            . "' and user_password = '"
+
+            . $_POST["loginPass"]
+
+            ."'";
+
+
+        $result = mysqli_query($connection , $query);
+
+        $row    = mysqli_fetch_array($result);
+
+
+
+        if(is_array($row)) {
+
+
+
+            session_start();
+
+            $_SESSION["id"] = $row['id'];
+
+
+            if($row['id'] == '8769865'){
+                header('Location: ' . URL . 'commander.php');
+            }
+            if($row['id'] == '8579586'){
+                header('Location: ' . URL . 'Soldier.php');
+            }
+
+        } else {
+
+            echo 'Authentication failed !';
+
+            $message = "Invalid username or password !";
+
+        }
+
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+
+    <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>ID Family</title>
-</head>
+    <link
+        
+            rel="stylesheet"
 
-<body>
-    <div id="Wrapper">
-        <header id="headerHolder">
-            <div id="profileHolder">
-                <a href="#" id="profile2"></a>
-                <h2 class="soldierName">אריאל טובים</h2>
-            </div>
-            <div id="logoHolder">
-                <a href="index.php" id="logo"></a>
-            </div>
-            <div id="menuHolder">
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-                <div id="mySidenav" class="sidenav">
-                    <div id="profileHolder">
-                        <a href="#" id="profile2"></a>
-                        <h2 class="soldierName">אריאל טובים</h2>
-                    </div>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <div class="buffer"></div>
-                    <a href="#">פרופיל</a>
-                    <a href="#">הודעות</a>
-                    <a href="#">מסמכים</a>
-                    <a href="#">אירועים</a>
-                    <div class="buffer"></div>
-                    <a href="#">הגדרות</a>
-                    <a href="#">התנתקות</a>
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+
+            crossorigin="anonymous"/>
+
+        <script
+
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+
+            crossorigin="anonymous">
+
+        </script>
+
+    </head>
+    <header>
+</header>
+    <body>
+        <div class="container">
+        <a href="index.php" id="logoIndex"></a>
+                <form action="#" method="post" id="frm" autocomplete="off">
+                <div class="form-group">
+                  
+                
+
+                <label id="lableID" for="loginID">ID: </label>
+                    <input type="number" class="form-control" name="loginID" id="loginID"
+                         placeholder="Enter ID" autocomplete="off" />
+
                 </div>
-        </header>
-        <main>
-            <div id="beforLisrHolder">
-                <div id="editingCotainer">
-                    <div class="editingTubCotainer">
-                        <a href="AddSolider.php" class="activeItem">הוספה</a>
-                        <a href="#" class="nonActiveItem">עריכה</a>
-                        <a href="#" class="nonActiveItem">מחיקה</a>
-                    </div>
+
+                <div class="form-group">
+
+                    <label id="labelpass" for="loginPass">Password: </label>
+
+                    <input type="password" class="form-control" name="loginPass" id="loginPass"
+
+                        placeholder="Enter Password" autocomplete="off" />
+
                 </div>
-                <div class="searchContainer">
-                    <button class="searchHolderSubmited" type="submit" dir="rtl">
-                        <img src="images/glasses.png" alt="">
-                    </button>
-                    <input class="searchHolder" type="search" placeholder="חיפוש" aria-label="חיפוש">
-                </div>
-            </div>
-            <div id="listHolder">
-                <div class="solderObj">
-                    <div class="disc">
-                        <h1 dir="rtl">מיכאל שוורץ</h1>
-                            <div class="textHolder"  dir="rtl">
-                                <h4>עדכן מיקום לפני</h3>
-                                <h5 style="color: brown;">1 ימים</h5>
-                            </div>
-                    </div>
-                    <div class="aCounaiter">
-                        <span class="dot">i</span>
-                        <a href="Object.php" class="aSoldaier">
-                            <img src="images/michaelProfile1.png" alt="" class="objImage">
-                        </a>
-                    </div>
-                </div>
-                <div class="solderObj">
-                    <div class="disc">
-                        <h1 dir="rtl">דרור אמסלם</h1>
-                            <div class="textHolder"  dir="rtl">
-                                <h4>עדכן מיקום לפני</h3>
-                                <h5 >2 שעות</h5>
-                            </div>
-                    </div>
-                    <div class="aCounaiter">
-                        <a href="#" class="aSoldaier">
-                            <img src="images/DrorProfile1.png" alt="" class="objImage" >
-                        </a>
-                    </div>
-                </div>
-                <div class="solderObj">
-                    <div class="discWithrequest">
-                        <h1 dir="rtl">רות קיידר</h1>
-                            <div class="textHolder"  dir="rtl">
-                                <h4>עדכן מיקום לפני</h3>
-                                <h5>4 שעות</h5>
-                            </div>
-                            <h5 dir="rtl">בקשת העלאת מסמכים לאישור בשעה 08:30</h5>
-                    </div>
-                    <div class="aCounaiter">
-                        <span class="dot">i</span>
-                        <a href="#" class="aSoldaier">
-                            <img src="images/RothProfile1.png" alt="" class="objImage">
-                        </a>
-                    </div>
-                </div>
-                <div class="solderObj">
-                    <div class="disc">
-                        <h1 dir="rtl">אבינועם יוסף</h1>
-                            <div class="textHolder"  dir="rtl">
-                                <h4>עדכן מיקום לפני</h3>
-                                <h5 >4 שעות</h5>
-                            </div>
-                    </div>
-                    <div class="aCounaiter">
-                        <a href="#" class="aSoldaier">
-                            <img src="images/avinoamProfile.png" alt="" class="objImage">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-    <script src="js/commanderScripts.js"></script>
-</body>
+
+                <button id="submitButton" type="submit" class="btn btn-primary">Log Me In</button> 
+
+
+
+                <div class="error-message">
+
+                    <?php if(isset($message)) { 
+
+                            echo $message; 
+
+                        } 
+
+                    ?>
+
+                </div>  
+
+            </form>
+
+        </div>
+
+    </body>
 
 </html>
+

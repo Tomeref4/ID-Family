@@ -1,5 +1,24 @@
-<!DOCTYPE html>
+<?php
 
+    include 'db.php';
+
+    include 'config.php';
+
+
+
+    session_start();
+
+
+
+    if(!isset($_SESSION["id"])) {
+
+        header('Location: ' . URL . 'index.php');
+
+    }
+
+?>
+
+<!DOCTYPE html>
 <html>
 
     <head>
@@ -15,7 +34,6 @@
         <section>
 
             <?php
-
                 echo '<style>';
                 require_once("css/style.css");
                 echo '</style>';
@@ -24,21 +42,29 @@
 
                 $Password = $_GET["password"];
 
-                $Release = $_GET["release"];
-
-                $Terms = $_GET["termsOfService"];
-
                 $Phone = $_GET["phone"];
 
-                $Contacts = $_GET["contacts"];
+                $ID = $_GET["id"];
 
-                $Gender = $_GET["gender"];
-
-                $WorkPermits = $_GET["workPermits"];
+                $Type = $_GET["soldierType"];
 
                 $Address = $_GET["address"];
 
                 $Birth = $_GET["dateOfBirth"];
+
+
+                $sql = "INSERT INTO tbl_220_users (id, user_type, user_password, user_phone, user_address, user_fullname)
+                VALUES ('$ID', '$Type', '$Password', '$Phone', '$Address', '$FullName')";
+                MYSQLI_SET_CHARSET($connection,'UTF8');
+                if ($connection->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                  }
+
+
+
+
 
                 echo '<div id="Php">';
 
@@ -50,26 +76,20 @@
 
                 echo "<span>:מספר טלפון " . $Phone . "</span>";
 
-                echo "<span>:מין " . $Gender . "</span>";
+                echo "<span>חייל/מפקד:" . $Tender . "</span>";
 
                 echo "<span>:אנשי קשר למקרה חירום " . $Contacts . "</span>";
 
                 echo "<span>:כתובת " . $Address . "</span>";
-                
-                //echo "<span>:פטורים " . $Release . "</span>";
-
-                //echo "<span>:תנאי שירות " . $Terms . "</span>";
-
-                //echo "<span>:אישורי עבודה " . $WorkPermits . "</span>";
 
                 echo '</div>';
                 
                 echo '<script> 
-                setTimeout(function(){
-                    
-                  location.href = "index.php";
-              },1000) ;
-              </script>'
+                     setTimeout(function(){
+                     location.href = "commander.php";
+                     },1) ;
+                     </script>';
+                echo '</div>';
             ?>      
         </section>
     </body>

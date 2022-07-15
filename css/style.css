@@ -13,7 +13,11 @@ a {
   color: #111;
   display: flex;
 }
-
+img {
+  filter: brightness(120%);
+  filter: contrast(120%);
+  filter: drop-shadow(2px 2px 2px black);
+}
 h4 {
   font-size: 12px;
   color: #d4d4d4;
@@ -48,25 +52,68 @@ h5 {
   grid-auto-flow: column;
 }
 
-#profileHolder {
+.profileHolder {
+  display: block;
+  width: 100px;
+  margin: auto;
+}
+.profileHolderNav{
   display: block;
   width: 100px;
   margin-top: 5px;
   margin-left: 14px;
   margin: auto;
 }
-
+#navDesktop{
+  display: none;
+  width: 20%;
+  height: 2000px;
+  background-color: #DFEDD6;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+#navDesktop a{
+  text-align: center;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+#navDesktop a:hover {
+  color: black;
+}
 #menuHolder {
   display: block;
   margin: auto;
 }
-
+#menuHolder span {
+  font-size:30px;cursor:pointer
+}
+#LightBox h2{
+  float: right;
+}
+#LightBox h3 {
+  float: right;
+}
+#LightBox p {
+  font-size: 12px;
+  float: right;
+}
+#LightBox select {
+  margin-left: 48px;
+}
+.submit-button {
+  float: right;
+  margin-top: 10px;
+}
 #logoHolder {
   display: block;
   margin: auto;
 }
 
-#profile2 {
+.profile2 {
   background-image: url("../images/arielProfile1.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -78,7 +125,7 @@ h5 {
   margin: auto;
 }
 
-#profile {
+.profile {
   background-image: url("../images/michaelProfile1.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -105,8 +152,6 @@ h5 {
   margin-left: 26px;
   margin-top: 5px;
 }
-
-/*sssssssssssssssssssssssssssssssssss*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -121,6 +166,7 @@ h5 {
 }
 
 .sidenav a {
+  text-align: center;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -132,7 +178,11 @@ h5 {
 .sidenav a:hover {
   color: black;
 }
-
+.closebtn {
+  color: #818181;
+  float: right;
+  font-size: 30px;
+}
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -140,19 +190,11 @@ h5 {
   font-size: 36px;
   margin-left: 50px;
 }
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-
-  .sidenav a {
-    font-size: 18px;
-  }
+#btnNav {
+  font-size:30px;cursor:pointer;
 }
 
-/*sssssssssssssssssssssssssssssssssss*/
-#beforLisrHolder {
+#beforeListHolder {
   width: 100%;
   height: 51px;
   background-color: rgb(255, 255, 255);
@@ -160,17 +202,17 @@ h5 {
 }
 
 #listHolder {
-  position: absolute;
+  position: relative;
   text-decoration: none;
   width: 360px;
   height: 100%;
-  overflow: scroll;
 }
 
 .solderObj {
   width: 100%;
   height: 117px;
   display: flex;
+  align-items: center;
 }
 
 #solderObjnotequest {
@@ -180,11 +222,9 @@ h5 {
   margin-left: -7px;
 }
 
-/*sssssssssssssssssssssssssssssssssss*/
 #editingCotainer {
   width: 100%;
   overflow: hidden;
-  font-weight: 0;
   display: flex;
 }
 
@@ -192,11 +232,10 @@ h5 {
   float: left;
   margin-right: 6px;
   margin-top: 15px;
-  margin-left: 15px;
 }
 
 .editingTubCotainer a {
-  float: left;
+  float: right;
   display: block;
   color: black;
   text-align: center;
@@ -258,7 +297,6 @@ h5 {
   margin-top: 15px;
 }
 
-/*dddddddddddddddddddddddddddddddddddddd*/
 .textHolder {
   display: flex;
   width: 100%;
@@ -291,27 +329,6 @@ h5 {
   margin-top: 35px;
 }
 
-.discWithrequest {
-  width: fit-content;
-  height: fit-content;
-  margin-left: 20px;
-  margin-top: 35px;
-}
-
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: brown;
-  border-radius: 50%;
-  display: inline-block;
-  margin-left: 60px;
-  position: absolute;
-  margin-top: 65px;
-  text-align: center;
-  font-weight: 600;
-  color: white;
-}
-
 .buffer {
   width: 100%;
   height: 2px;
@@ -319,7 +336,6 @@ h5 {
   margin-top: 15px;
 }
 
-/*Tomer*/
 #ProfileHolder {
   display: flex;
   width: 360px;
@@ -369,7 +385,7 @@ h3 {
   font-size: 14px;
 }
 
-#SoliderHou {
+#SoliderHouse {
   font-size: 14px;
   margin-top: 60px;
   margin-left: 38px;
@@ -467,9 +483,9 @@ h3 {
   display: flex;
 }
 
-#Contacts .SmallSpan {
+#Contacts .BigSpan {
   margin-top: 0px;
-  margin-left: 104px;
+  margin-left: 80px;
 }
 
 .Contacts i {
@@ -492,7 +508,7 @@ h3 {
 
 #Contact1 {
   margin-top: 26px;
-  margin-left: 135px;
+  margin-left: 119px;
   font-size: 16px;
 }
 
@@ -522,10 +538,10 @@ h3 {
   overflow: hidden;
 }
 
-#favoritHolder {
+#favoriteHolder {
+  height: 130px;
   margin-top: 5px;
   width: 100%;
-  height: inherit;
   display: flex;
 }
 
@@ -541,8 +557,8 @@ h3 {
 }
 
 .favorite img {
-  width: 112px;
-  height: 103px;
+  width: 115px;
+  height: 130px;
 }
 
 #fav1 {
@@ -564,12 +580,12 @@ h3 {
   font-size: 10px;
   position: absolute;
   color: black;
-  margin-top: 83px;
+  margin-top: 107px;
   margin-left: 10px;
 }
 
 .rec {
-  margin-top: 83px;
+  margin-top: 106px;
   background-color: rgb(255, 255, 255, .7);
   position: absolute;
   width: 112px;
@@ -577,19 +593,18 @@ h3 {
 }
 
 /*favorite*/
-/*sellected*/
+/*selected*/
 #selectDisplayHolder {
   margin-right: 6px;
-  margin-top: 6px;
-  width: 100%;
-  overflow: hidden;
-  font-weight: 0;
-  display: block;
+  margin-top: 10px;
+  width: 160px;
+  display: flex;
+  float: right;
 }
 
 .selectContainer {
   float: right;
-  margin-right: 6px;
+  width: 160px;
 }
 
 .selectContainer a {
@@ -621,12 +636,10 @@ h3 {
 
 /*List*/
 #ListTubHolder {
-  margin-right: 6px;
-  margin-top: 6px;
+  margin-top: 10px;
   width: 100%;
-  overflow: hidden;
-  font-weight: 0;
   display: block;
+  float: right;
 }
 
 .selectTubContainer {
@@ -643,15 +656,15 @@ h3 {
   text-decoration: none;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .selectTubContainer a.activeItem {
   background: rgba(223, 237, 214);
   color: black;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .selectTubContainer a.nonActiveItem {
@@ -664,12 +677,16 @@ h3 {
   background: rgba(223, 237, 214);
 }
 
-/*Acticels*/
+/*Articels*/
 #articlesHolder {
   display: flex;
   width: 100%;
+  margin-right: 6px;
 }
-
+.arct img{
+  width: 147px;
+  height: 160px;
+}
 #arct1 {
   margin-left: 26px;
   margin-top: 5px;
@@ -766,7 +783,7 @@ h3 {
   margin-left: 235px;
 }
 
-/**/
+
 #DetailHolder {
   width: 360px;
   display: flex;
@@ -836,3 +853,455 @@ a div {
 #Php span {
   font-size: 40px;
 }
+.clear{
+  clear: both;
+}
+label {
+  font-size: 20px;
+}
+#AddSoldier span {
+  font-size: 20px;
+}
+#upcomingEvemtsHolder p {
+  font-size: 11px
+}
+
+#lightBoxDelete{
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(0, -50%);
+  margin: auto;
+  background-color: #111;
+  width: 200px;
+  height: 300px;
+  background: #DFEDD6;
+  display: none;
+}
+
+#LightBox {
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(0, -50%);
+  margin: auto;
+  background-color: #111;
+  width: 200px;
+  height: 300px;
+  background: #DFEDD6;
+  display: none;
+}
+#FormObject {
+  text-align: center;
+}
+
+
+
+
+
+
+#container{
+  width: 100%;
+  height: 667px;
+}
+#loginID{
+  border-color: #DFEDD6;
+  border-width: 3px; 
+  width: 100%;
+  margin: 0 auto;
+}
+#loginPass{
+  border-color: #DFEDD6;
+  border-width: 3px;
+  width: 100%;
+  margin: 0 auto;
+
+}
+#logoIndex{
+  background-image: url("../images/logo1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 120px;
+  width: 160px;
+  display: flex;
+  margin: 0 auto;
+}
+#submitButton{
+  background-color: #DFEDD6;
+  color: black;
+  border-width: 0;
+  margin: 0 auto;
+  display: flex;
+}
+#lableID{
+  margin: 0 auto;
+  display: flex;
+  width: 5%;
+  margin-bottom: 20px;
+  font-size: 30px;
+  margin-top: 20px;
+}
+#labelpass{
+  margin: 0 auto;
+  display: flex;
+  width: 10%;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+/*RESPONSIVE*/
+@media only screen and (min-width : 1080px) {
+  #Wrapper {
+    width: 80%;
+    float: left;
+  }
+  #menuHolder{
+    margin: 0;
+  }
+  #headerHolder{
+    width: 100%;
+    display: flex;
+  }
+  .disc {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+  #listHolder {
+    margin-top: 50px;
+    width: 800px;
+  }
+  #beforeListHolder{
+    width: 100%;
+    position: relative;
+  }
+  .searchHolder {
+    width: 120px;
+    height: 35px;
+    font-size: 26px;
+    text-align: center;
+  }
+  #SearchLogo{
+    width: 27px;
+    height: 27px;
+    margin-top: 7px;
+  }
+  #editingCotainer{
+    position: relative;
+    display: block;
+  }
+  #logo {
+    height: 100px;
+    width: 120px;
+  }
+  .editingTubCotainer {
+    float: right;
+  }
+  .editingTubCotainer a {
+    float: right;
+    font-size: 22px;
+  }
+  .searchContainer {
+    width: 100px;
+    float: right;
+    margin: 0 auto;
+  }
+  main {
+    display: flex;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h4, h5 {
+    font-size: 22px;
+  }
+  .page3 main{
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+  #Object h3 {
+    font-size: 23px;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+  #BneiBrak {
+    font-size: 19px;
+    margin-left: 39px;
+    margin-top: 40px;
+  }
+  #LastLocation{
+    font-size: 21px;
+    margin-top: 62px;
+    margin-left: 110px;
+  }
+  #SoliderHouse{
+    font-size: 21px;
+    margin-top: 87px;
+    margin-left: 57px;
+  }
+  #Requests {
+    margin-left: 26px;
+    margin-top: 115px;
+    font-size: 20px;
+  }
+  #Time {
+    font-size: 17px;
+    margin-top: 145px;
+    margin-left: 100px;
+  }
+  #Documents h3 {
+    margin-left: 260px;
+    margin-top: 9px;
+  }
+  
+  .Document {
+    margin-left: 96px;
+  }
+  
+  #Document1 {
+    margin-top: 45px;
+  }
+  
+  #Document2 {
+    margin-top: 110px;
+  }
+  
+  #Document3 {
+    margin-top: 175px;
+  }
+  
+  .Document i {
+    margin-left: 185px;
+    font-size: 60px;
+  }
+  
+  .BigSpan {
+    font-size: 23px;
+    position: absolute;
+  }
+  
+  .SmallSpan {
+    font-size: 21px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 82px;
+    color: rgba(33, 33, 33, 0.54);
+  }
+  
+  #Ptorim {
+    margin-left: 110px;
+  }
+  
+  #Sherot {
+    margin-left: 70px;
+  }
+  
+  #Work {
+    margin-left: 55px;
+  }
+
+  #Contacts {
+    height: 250px;
+    width: 350px;
+    margin-right: 14px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .Contacts i {
+    float: right;
+    position: relative;
+    margin-left: 0px;
+  }
+  #Contacts .BigSpan {
+    position: relative;
+    float: right;
+    height: 50px;
+  }
+
+  .Contacts span {
+    float: right;
+    position: relative;
+    
+  }
+  #FirstContact, #SecondContact {
+    width: 150px;
+    height: 100px;
+    display: block;
+    position: relative;
+  }
+  #FirstContact i {
+    margin-top: 0px;
+  }
+  
+  #SecondContact i {
+    margin-top: 0px;
+  }
+  
+  #Contact1 {
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 23px;
+  }
+  
+  #Phone1 {
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 21px;
+  }
+  
+  #Contact2 {
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 23px;
+  }
+  
+  #Phone2 {
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 21px;
+  }
+  
+  #SoldierMain {
+    flex-direction: column;
+    align-items: flex-end
+  }
+  #hFavorite {
+    margin-left: 0px;
+    font-size: 23px;
+  }
+  #favoriteHolder {
+    justify-content: flex-end;
+    height: 180px;
+    margin-right: 6px;
+  }
+  #articlesHolder {
+    justify-content: flex-end;
+  }
+  #articlesHolder img {
+    width: 150px;
+    height: 170px;
+  }
+  .favorite img {
+    width: 150px;
+    height: 170px;
+  }
+  .rec {
+    margin-top: 126px;
+    background-color: rgb(255, 255, 255, .7);
+    width: 146px;
+    height: 40px;
+  }
+  .favorite {
+    width: 150px;
+    height: 170px;
+    position: relative;
+  }
+  .favSpan {
+    font-size: 16px;
+    margin-top: 126px;
+    margin-left: 0px;
+  }
+  .selectContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .selectContainer a{
+    font-size: 23px;
+  }
+  .selectTubContainer a{
+    font-size: 23px;
+  }
+  .rec2 {
+    width: 146px;
+    height: 60px;
+    margin-top: 106px;
+  }
+  .h3Arct {
+    font-size: 20px;
+    color: black;
+    margin-top: 100px;
+    margin-left: 60px;
+  }
+  #arctSpan1 {
+    font-size: 14px;
+    margin-top: 125px;
+    margin-left: 10px;
+  }
+  #arctSpan2 {
+    font-size: 14px;
+    margin-top: 125px;
+    margin-left: 15px;
+  }
+  #arctA2 {
+    margin-top: 150px;
+    margin-left: 236px;
+  } 
+  #arctA1 {
+    margin-top: 150px;
+    margin-right: 173px;
+    
+  }
+  #upcomingEvemtsHolder {
+    width: 600px;
+    height: 100%;
+  }
+  #Events {
+    margin-top: 23px;
+    margin-left: 510px;
+    font-size: 23px;
+  }
+  #EventsImg {
+    width: 275px;
+    height: 170px;
+    margin-left: 320px;
+    margin-top: 60px;
+  }
+  #upcomingEvemtsHolder p {
+    font-size: 18px;
+    margin-top: 70px;
+    margin-left: 30px;
+  }
+  #LightBox {
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    transform: translate(0, -50%);
+    margin: auto;
+    background-color: #111;
+    width: 350px;
+    height: 450px;
+    background: #DFEDD6;
+    display: none;
+  }
+  #LightBox h2{
+    float: right;
+  }
+  #LightBox h3 {
+    float: right;
+  }
+  #LightBox p {
+    font-size: 16px;
+    float: right;
+  }
+  #LightBox select {
+    margin-left: 48px;
+  }
+  label {
+    font-size: 30px;
+  }
+  #Big {
+    font-size: 26px;
+  }
+}
+  /*end of media 1080px*/
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+  
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+
+
